@@ -1,0 +1,46 @@
+% !TEX TS-program = lualatex
+% Reetesh Mukul resume.
+
+\documentclass[localFont,alternative,11pt,compact]{yaac-another-awesome-cv}
+
+\renewcommand{\baselinestretch}{1.25}
+\name{Reetesh}{Mukul}
+\tagline{Senior Principal Applied Scientist | Computer Vision and Multimodal AI}
+\photo{2.5cm}{assets/reetesh-mukul.jpg}
+\socialinfo{
+	\linkedin{reetesh-mukul-5392532}
+	\github{reeteshmukul}\\
+	\smartphone{IN: +91 89511 63698}
+	\email{reetesh.mukul@gmail.com}\\
+	\address{Bangalore}
+}
+
+\begin{document}
+
+	\makecvheader
+
+	\makecvfooter
+		{\textsc{\today}}
+		{\textsc{Reetesh Mukul}}
+		{\thepage}
+
+	\vspace{20pt}
+	\input{sections/summary}
+	
+	\vspace{20pt}
+	\input{sections/skills}
+	
+	\vspace{20pt}
+	\input{sections/experience}
+	
+	\vspace{20pt}
+	\input{sections/projects}
+
+	\vspace{20pt}
+	\input{sections/publications}
+	
+	\vspace{20pt}
+	\input{sections/education}
+	\input{sections/languages}
+
+\end{document}

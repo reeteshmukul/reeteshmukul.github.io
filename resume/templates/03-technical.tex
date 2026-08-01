@@ -1,0 +1,33 @@
+% !TEX TS-program = lualatex
+\documentclass[9.8pt,a4paper]{article}
+\usepackage[margin=1.2cm]{geometry}
+\usepackage{xcolor,tabularx,enumitem,hyperref,parskip,fontawesome5}
+\input{style}
+\definecolor{navy}{HTML}{14213D}
+\definecolor{lime}{HTML}{4F7463}
+\definecolor{mist}{HTML}{F7F4EC}
+\definecolor{muted}{HTML}{50606A}
+\hypersetup{colorlinks=true,urlcolor=navy}
+\pagestyle{empty}
+\newcommand{\Section}[1]{\par\vspace{0.65em}\noindent\colorbox{navy}{\parbox{0.985\linewidth}{\hspace{0.38em}\color{white}\bfseries #1}}\par\vspace{0.3em}\color{black}}
+\newcommand{\Role}[4]{\begin{tabularx}{\linewidth}{@{}p{3.6cm}X@{}}\color{lime}\textbf{#1} & \textbf{#2}\\[-0.08em] & {\small\color{muted}#3}\\[-0.08em] & #4\end{tabularx}\vspace{0.48em}}
+\newcommand{\WorkItem}[2]{{\small #1} {\footnotesize\color{muted}#2}}
+\newcommand{\WorkSeparator}{\enspace\color{lime}\textbar\enspace\color{black}}
+\newcommand{\ResearchHighlight}[2]{\textbf{#1.} #2\par\vspace{0.28em}}
+\input{content}
+\begin{document}
+{\fontsize{27}{30}\selectfont\bfseries\color{navy}\ResumeName}\hfill\parbox[t]{9cm}{\raggedleft\small\color{muted}\ResumeContact}\\[-0.1em]
+{\large\color{lime}\ResumeTitle}\par
+\vspace{0.45em}\noindent\color{lime}\rule{\linewidth}{1.2pt}\par\color{black}
+\textbf{\color{navy}PROFILE}\par\vspace{0.2em}
+\ResumeSummary\par\vspace{0.45em}
+\noindent\colorbox{mist}{\parbox{0.965\linewidth}{\vspace{0.3em}\textbf{\color{navy}KEY EXPERTISE}\par\vspace{0.12em}\small\ResumeSkills\vspace{0.3em}}}
+\Section{Research Highlights}
+\ResumeResearchHighlights
+\Section{Experience}
+\ResumeExperience
+\Section{Selected Patents and Publications}
+\ResumeSelectedWorks
+\Section{Education}
+\ResumeEducation
+\end{document}

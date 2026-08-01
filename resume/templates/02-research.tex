@@ -1,0 +1,35 @@
+% !TEX TS-program = lualatex
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.45cm]{geometry}
+\usepackage{xcolor,tabularx,enumitem,hyperref,parskip,fontawesome5}
+\input{style}
+\definecolor{ink}{HTML}{182433}
+\definecolor{accent}{HTML}{445B70}
+\definecolor{pale}{HTML}{F6F1E8}
+\definecolor{muted}{HTML}{58616B}
+\definecolor{panel}{HTML}{FAF7F0}
+\hypersetup{colorlinks=true,urlcolor=accent}
+\pagestyle{empty}
+\newcommand{\Section}[1]{\par\vspace{0.8em}{\large\bfseries\color{accent}#1}\par\vspace{0.12em}\color{black}}
+\newcommand{\Role}[4]{\textbf{#2} \hfill \textbf{#1}\\[-0.08em]{\itshape #3}\\[-0.08em]{\small #4}\par\vspace{0.65em}}
+\newcommand{\WorkItem}[2]{{\small #1} {\footnotesize\color{muted}#2}}
+\newcommand{\WorkSeparator}{\enspace\color{accent}\textbar\enspace\color{black}}
+\newcommand{\ResearchHighlight}[2]{\textbf{#1.} #2\par\vspace{0.34em}}
+\newcommand{\ProfilePanel}{\noindent\colorbox{panel}{\parbox{0.95\linewidth}{\vspace{0.3em}\color{ink}\ResumeSummary\vspace{0.3em}}}}
+\newcommand{\ExpertisePanel}{\noindent\colorbox{panel}{\parbox{0.95\linewidth}{\vspace{0.25em}\small\color{ink}\ResumeSkills\vspace{0.25em}}}}
+\input{content}
+\begin{document}
+\noindent\colorbox{pale}{\parbox{0.965\linewidth}{\vspace{0.55em}\hspace{0.55em}{\fontsize{25}{28}\selectfont\bfseries\color{ink}\ResumeName}\\[-0.15em]\hspace{0.55em}{\large\color{accent}\ResumeTitle}\\[0.35em]\hspace{0.55em}{\small\color{muted}\ResumeContact}\vspace{0.55em}}}
+\Section{Research Profile}
+\ProfilePanel
+\Section{Research and Engineering Focus}
+\ExpertisePanel
+\Section{Research Highlights}
+\ResumeResearchHighlights
+\Section{Experience}
+\ResumeExperience
+\Section{Selected Patents and Publications}
+{\small\ResumeSelectedWorks}
+\Section{Education}
+\ResumeEducation
+\end{document}

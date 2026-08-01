@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build resume PDF",
+      "type": "shell",
+      "command": "latexmk",
+      "args": [
+        "-lualatex",
+        "-interaction=nonstopmode",
+        "resume.tex"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/resume"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean resume build files",
+      "type": "shell",
+      "command": "latexmk",
+      "args": [
+        "-c",
+        "resume.tex"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/resume"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open generated resume PDF",
+      "type": "shell",
+      "command": "open",
+      "args": [
+        "resume.pdf"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/resume"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
