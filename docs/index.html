@@ -37,7 +37,9 @@
     .button { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 17px; border: 1px solid var(--ink); font-size: 0.84rem; font-weight: 700; }
     .button.primary { background: var(--ink); color: #fff; }
     .button.secondary:hover { background: var(--wash); }
-    .contact { min-width: 270px; padding: 14px 0 2px 22px; border-left: 1px solid var(--line); color: var(--muted); font-size: 0.83rem; line-height: 1.85; text-align: right; }
+    .contact-profile { display: flex; align-items: center; gap: 16px; padding: 10px 0 2px 22px; border-left: 1px solid var(--line); }
+    .portrait { display: block; width: 74px; height: 92px; border: 1px solid var(--line); object-fit: cover; object-position: center top; filter: saturate(0.88); }
+    .contact { min-width: 270px; color: var(--muted); font-size: 0.83rem; line-height: 1.85; text-align: right; }
     .contact a:hover { color: var(--accent); }
     .section { background: var(--paper); border-bottom: 1px solid var(--line); }
     .section .shell { padding-top: 52px; padding-bottom: 52px; }
@@ -71,7 +73,8 @@
       .hero { grid-template-columns: 1fr; gap: 20px; padding: 38px 0; }
       h1 { font-size: 2.6rem; }
       h2 { font-size: 1.9rem; }
-      .contact { padding: 16px 0 0; border-top: 1px solid var(--line); border-left: 0; text-align: left; }
+      .contact-profile { padding: 16px 0 0; border-top: 1px solid var(--line); border-left: 0; }
+      .contact { min-width: 0; text-align: left; }
       .section .shell { padding-top: 42px; padding-bottom: 42px; }
       .section-head, .highlight, .role { grid-template-columns: 1fr; gap: 14px; }
       .section-head { margin-bottom: 28px; }
@@ -104,11 +107,14 @@
             <a class="button secondary" href="mailto:reetesh.mukul@gmail.com">Email</a>
           </div>
         </div>
-        <div class="contact">
-          Bengaluru, India<br>
-          <a href="mailto:reetesh.mukul@gmail.com">reetesh.mukul@gmail.com</a><br>
-          <a href="https://www.linkedin.com/in/reetesh-mukul-5392532">linkedin.com/in/reetesh-mukul-5392532</a><br>
-          <a href="https://huggingface.co/reeteshmukul">huggingface.co/reeteshmukul</a>
+        <div class="contact-profile">
+          <img class="portrait" src="assets/reetesh-mukul.jpg" alt="Reetesh Mukul">
+          <div class="contact">
+            Bengaluru, India<br>
+            <a href="mailto:reetesh.mukul@gmail.com">reetesh.mukul@gmail.com</a><br>
+            <a href="https://www.linkedin.com/in/reetesh-mukul-5392532">linkedin.com/in/reetesh-mukul-5392532</a><br>
+            <a href="https://huggingface.co/reeteshmukul">huggingface.co/reeteshmukul</a>
+          </div>
         </div>
       </header>
     </div>
@@ -123,8 +129,8 @@
           </div>
         </div>
         <div class="focus-grid">
-          <article class="focus"><div class="number">01</div><h3>AI Policy Verification</h3><p>LLM-powered policy verification with policy and query intermediate representations, query-to-policy mapping, constraint-aware reasoning, and multi-step action evaluation.</p></article>
-          <article class="focus"><div class="number">02</div><h3>Large Multimodal Models</h3><p>Vision-language adaptation, visual grounding, cross-modal alignment, temporal reasoning, and evaluation design for real-world systems.</p></article>
+          <article class="focus"><div class="number">01</div><h3>Large Multimodal Models</h3><p>Vision-language adaptation, visual grounding, cross-modal alignment, temporal reasoning, and evaluation design for real-world systems.</p></article>
+          <article class="focus"><div class="number">02</div><h3>AI Policy Verification</h3><p>LLM-powered policy verification with policy and query intermediate representations, query-to-policy mapping, constraint-aware reasoning, and multi-step action evaluation.</p></article>
           <article class="focus"><div class="number">03</div><h3>Document Intelligence</h3><p>Schema-guided extraction for multilingual OCR, complex layouts, reading order, tables, invoices, and constrained key-value extraction.</p></article>
           <article class="focus"><div class="number">04</div><h3>Robust Visual Systems</h3><p>Visual guard models, synthetic-media detection, face anti-spoofing, memorability modeling, and efficient adaptive routing.</p></article>
         </div>
