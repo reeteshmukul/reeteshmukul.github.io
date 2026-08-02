@@ -1,7 +1,7 @@
 % !TEX TS-program = lualatex
-\documentclass[10.2pt,a4paper]{article}
-\usepackage[margin=1.35cm]{geometry}
-\usepackage{xcolor,tabularx,enumitem,hyperref,parskip,fontawesome5}
+\documentclass[10.7pt,a4paper]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{xcolor,tabularx,enumitem,hyperref,parskip,fontawesome5,needspace}
 \input{style}
 \definecolor{ink}{HTML}{17212B}
 \definecolor{accent}{HTML}{3F5C73}
@@ -11,16 +11,16 @@
 \hypersetup{colorlinks=true,urlcolor=accent}
 \pagestyle{empty}
 \setlist[itemize]{leftmargin=1.2em,nosep}
-\newcommand{\Section}[1]{\par\vspace{0.75em}{\large\bfseries\color{ink}#1}\par\noindent\color{warmline}\rule{\linewidth}{0.6pt}\par\vspace{0.25em}\color{black}}
-\newcommand{\Role}[4]{\textbf{#2}\hfill{\color{accent}\textbf{#1}}\\[-0.08em]{\color{muted}#3}\\[-0.08em]#4\par\vspace{0.5em}}
+\newcommand{\Section}[1]{\par\vspace{1.05em}{\large\bfseries\color{ink}#1}\par\vspace{0.18em}\noindent\color{warmline}\rule{\linewidth}{0.6pt}\par\vspace{0.5em}\color{black}}
+\newcommand{\Role}[4]{\Needspace{6\baselineskip}{\normalsize\bfseries\color{ink} #2}\hfill{\footnotesize\color{accent}\bfseries #1}\\[0.12em]{\small\color{muted}\itshape #3}\\[0.34em]{\small #4}\par\vspace{1.1em}}
 \newcommand{\WorkItem}[2]{{\small #1} {\footnotesize\color{muted}#2}}
 \newcommand{\WorkSeparator}{\enspace\color{warmline}\textbar\enspace\color{black}}
-\newcommand{\ResearchHighlight}[2]{\textbf{#1.} #2\par\vspace{0.28em}}
-\newcommand{\ProfilePanel}{\noindent\colorbox{panel}{\parbox{0.95\linewidth}{\vspace{0.3em}\color{ink}\ResumeSummary\vspace{0.3em}}}}
-\newcommand{\ExpertisePanel}{\noindent\colorbox{panel}{\parbox{0.95\linewidth}{\vspace{0.25em}\small\color{ink}\ResumeSkills\vspace{0.25em}}}}
+\newcommand{\ResearchHighlight}[2]{\Needspace{3\baselineskip}{\color{accent}\textbf{#1.}} #2\par\vspace{0.76em}}
+\newcommand{\ProfilePanel}{\noindent\colorbox{panel}{\parbox{0.955\linewidth}{\vspace{0.65em}\color{ink}\ResumeSummary\vspace{0.65em}}}}
+\newcommand{\ExpertisePanel}{\noindent\colorbox{panel}{\parbox{0.955\linewidth}{\vspace{0.65em}\small\color{ink}\ResumeSkills\vspace{0.65em}}}}
 \input{content}
 \begin{document}
-{\fontsize{24}{27}\selectfont\bfseries\color{ink}\ResumeName}\par
+{\fontsize{26}{30}\selectfont\bfseries\color{ink}\ResumeName}\par
 {\normalsize\color{accent}\ResumeTitle}\par\vspace{0.2em}
 {\footnotesize\color{muted}\ResumeContact}
 \Section{Profile}
@@ -29,6 +29,7 @@
 \ExpertisePanel
 \Section{Research Highlights}
 \ResumeResearchHighlights
+\clearpage
 \Section{Professional Experience}
 \ResumeExperience
 \Section{Selected Patents and Publications}
