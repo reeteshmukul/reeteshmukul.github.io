@@ -1,7 +1,7 @@
 % !TEX TS-program = lualatex
 \documentclass[10.7pt,a4paper]{article}
 \usepackage[margin=1.5cm]{geometry}
-\usepackage{xcolor,tabularx,enumitem,hyperref,parskip,fontawesome5,needspace}
+\usepackage{xcolor,tabularx,enumitem,hyperref,parskip,fontawesome5,needspace,graphicx}
 \input{style}
 \definecolor{ink}{HTML}{17212B}
 \definecolor{accent}{HTML}{3F5C73}
@@ -20,9 +20,15 @@
 \newcommand{\ExpertisePanel}{\noindent\colorbox{panel}{\parbox{0.955\linewidth}{\vspace{0.65em}\small\color{ink}\ResumeSkills\vspace{0.65em}}}}
 \input{content}
 \begin{document}
+\noindent
+\begin{minipage}[t]{0.76\linewidth}
 {\fontsize{26}{30}\selectfont\bfseries\color{ink}\ResumeName}\par
 {\normalsize\color{accent}\ResumeTitle}\par\vspace{0.2em}
 {\footnotesize\color{muted}\ResumeContact}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.18\linewidth}
+\raggedleft\vspace{-0.25em}\fcolorbox{warmline}{white}{\includegraphics[width=2.45cm]{resume/assets/reetesh-mukul.jpg}}
+\end{minipage}\par
 \Section{Profile}
 \ProfilePanel
 \Section{Core Expertise}
