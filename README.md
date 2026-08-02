@@ -4,7 +4,7 @@ Personal resume website and modular LaTeX resume source.
 
 ## Website
 
-`index.html` is the GitHub Pages entry point. The same static site is mirrored in `docs/` for repositories configured to publish from that folder. The site presents the research resume as a webpage and links to `reeteshmukul.pdf` for download.
+`index.html` is the GitHub Pages entry point. The same static site is mirrored in `docs/` for repositories configured to publish from that folder. The site presents the research resume as a webpage and links to `Reetesh_Mukul_Resume.pdf` for download.
 
 ## Resume Source
 
