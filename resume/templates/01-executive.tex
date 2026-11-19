@@ -1,23 +1,75 @@
 % !TEX TS-program = lualatex
 \documentclass[10.7pt,a4paper]{article}
 \usepackage[margin=1.5cm]{geometry}
-\usepackage{xcolor,tabularx,enumitem,hyperref,parskip,fontawesome5,needspace,graphicx}
+\usepackage{xcolor,colortbl,tabularx,enumitem,hyperref,parskip,fontawesome5,needspace,graphicx}
+\usepackage{tikz}
 \input{style}
 \definecolor{ink}{HTML}{17212B}
 \definecolor{accent}{HTML}{3F5C73}
 \definecolor{muted}{HTML}{5B6470}
 \definecolor{panel}{HTML}{F7F2E9}
 \definecolor{warmline}{HTML}{D8CBAF}
+\definecolor{executivePaper}{HTML}{FAF9F3}
+\definecolor{executivePanel}{HTML}{F3F0E7}
+\definecolor{pageFrame}{HTML}{5D8DBB}
+\AddToHook{shipout/foreground}{%
+  \put(0,0){\begin{tikzpicture}[overlay]
+    \draw[pageFrame,line width=0.25pt] (2.5mm,-2.5mm) rectangle
+      (\dimexpr\paperwidth-2.5mm\relax,\dimexpr2.5mm-\paperheight\relax);
+  \end{tikzpicture}}}
+\newlength{\experienceParskip}
+\pagecolor{executivePaper}
 \hypersetup{colorlinks=true,urlcolor=accent}
 \pagestyle{empty}
 \setlist[itemize]{leftmargin=1.2em,nosep}
-\newcommand{\Section}[1]{\par\vspace{1.05em}{\large\bfseries\color{ink}#1}\par\vspace{0.18em}\noindent\color{warmline}\rule{\linewidth}{0.6pt}\par\vspace{0.5em}\color{black}}
-\newcommand{\Role}[4]{\Needspace{6\baselineskip}{\normalsize\bfseries\color{ink} #2}\hfill{\footnotesize\color{accent}\bfseries #1}\\[0.12em]{\small\color{muted}\itshape #3}\\[0.34em]{\small #4}\par\vspace{1.1em}}
+\newcommand{\Section}[2][0.18em]{\par\vspace{1.05em}{\large\bfseries\color{ink}#2}\par\vspace{#1}\noindent\color{warmline}\rule{\linewidth}{0.6pt}\par\vspace{0.5em}\color{black}}
+\newcommand{\JustifiedRoleBody}[1]{{\leftskip=0pt\rightskip=0pt\parfillskip=0pt plus 1fil\relax #1\par}}
+\newcommand{\RoleAssignment}[2]{#1\par{\normalfont\footnotesize\color{muted}#2}}
+\newcommand{\AssignmentBreak}{\par\vspace{4pt}}
+\newcommand{\Role}[4]{%
+  \noindent\begin{minipage}[t]{0.188\linewidth}
+    \raggedright\footnotesize\bfseries\color{accent}\strut #1
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.795\linewidth}
+    \raggedright{\normalsize\bfseries\color{ink}\strut #2}\par
+    {\small\color{muted}\itshape #3}\par\vspace{1.5pt}
+    {\small #4\par}
+  \end{minipage}\par\vspace{3pt}}
 \newcommand{\WorkItem}[2]{{\small #1} {\footnotesize\color{muted}#2}}
 \newcommand{\WorkSeparator}{\enspace\color{warmline}\textbar\enspace\color{black}}
-\newcommand{\ResearchHighlight}[2]{\Needspace{3\baselineskip}{\color{accent}\textbf{#1.}} #2\par\vspace{0.76em}}
+\newcounter{highlightIndex}
+\newcommand{\TopicIcon}[1]{{\fontsize{12}{12}\selectfont\faIcon{#1}}\par\vspace{1pt}}
+\newcommand{\HighlightCell}[3]{%
+  \begingroup
+  \setlength{\fboxrule}{0.7pt}\setlength{\fboxsep}{2pt}%
+  \fcolorbox{white}{executivePanel}{%
+    \begin{minipage}[t]{\dimexpr#1-2\fboxsep-2\fboxrule\relax}
+      {\centering\color{accent}\bfseries #2\par}
+      \vspace{2pt}\normalfont\small\color{ink}\noindent#3\par
+    \end{minipage}}%
+  \endgroup}
+\newcommand{\ResearchHighlight}[2]{%
+  \stepcounter{highlightIndex}%
+  \ifnum\value{highlightIndex}=5
+    \noindent\makebox[\linewidth][c]{\HighlightCell{0.76\linewidth}{#1}{#2}}\par
+  \else
+    \noindent\HighlightCell{0.48\linewidth}{#1}{#2}%
+    \ifodd\value{highlightIndex}\hfill\ignorespaces
+    \else\par\vspace{2pt}\fi
+  \fi}
 \newcommand{\ProfilePanel}{\noindent\colorbox{panel}{\parbox{0.955\linewidth}{\vspace{0.65em}\color{ink}\ResumeSummary\vspace{0.65em}}}}
-\newcommand{\ExpertisePanel}{\noindent\colorbox{panel}{\parbox{0.955\linewidth}{\vspace{0.65em}\small\color{ink}\ResumeSkills\vspace{0.65em}}}}
+\newcommand{\ExpertiseRow}[2]{\rowcolor{executivePanel}\textbf{#1} & #2 \\ \hline}
+\newcommand{\ExpertisePanel}{%
+  \begingroup
+  \small\color{ink}
+  \setlength{\arrayrulewidth}{0.6pt}\arrayrulecolor{white}
+  \setlength{\tabcolsep}{8pt}\renewcommand{\arraystretch}{1.55}
+  \noindent\begin{tabularx}{\linewidth}
+    {|>{\raggedright\arraybackslash}p{0.25\linewidth}|>{\raggedright\arraybackslash}X|}
+    \hline
+    \ResumeSkills
+  \end{tabularx}\par
+  \endgroup}
 \input{content}
 \begin{document}
 \noindent
@@ -33,13 +85,33 @@
 \ProfilePanel
 \Section{Core Expertise}
 \ExpertisePanel
-\Section{Research Highlights}
-\ResumeResearchHighlights
+\vspace{8pt}
+\Section[-3pt]{Research Highlights}
+{\setlength{\parskip}{0pt}\setcounter{highlightIndex}{0}\ResumeResearchHighlights}
 \clearpage
 \Section{Professional Experience}
-\ResumeExperience
+\begingroup
+  \setlength{\experienceParskip}{\parskip}%
+  \setlength{\fboxrule}{1.05pt}\setlength{\fboxsep}{3.8pt}%
+  \noindent\fcolorbox{white}{executivePanel}{%
+    \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+      \setlength{\parskip}{\experienceParskip}%
+      \ResumeExperience
+    \end{minipage}}\par
+\endgroup
 \Section{Selected Patents and Publications}
-\ResumeSelectedWorks
+\begingroup
+  \fontsize{9}{10.3}\selectfont\setlength{\parskip}{0pt}
+  \newcommand{\PatentEntry}[3]{\noindent\makebox[9.4em][l]{\color{muted}#1}\href{https://patents.google.com/patent/#2/en}{\makebox[9.75em][l]{#2}}#3\par}
+  \PatentEntry{Oracle grant}{US12670212B1}{Match video highlights to a query using visual, audio, and text cues.}
+  \PatentEntry{Adobe grant}{US12547446B2}{Switch thread-pool policies at runtime using bandit feedback.}
+  \PatentEntry{Adobe grant}{US12135741B2}{Tune batch sizes and parallel file transfers with a Markov decision process.}
+  \PatentEntry{Adobe grant}{US11556393B2}{Learn which resource adjustments keep an application responsive.}
+  \PatentEntry{Adobe grant}{US10884769B2}{Recommend editing tools from a sequence of photo-editing actions.}
+  \PatentEntry{Oracle application}{US20260127165A1}{Use a document schema to guide multimodal key-value extraction.}
+  \PatentEntry{Oracle application}{US20260105736A1}{Predict image memorability from whole-image, region, and pixel features.}
+  \noindent\WorkItem{WiMAX QoS bandwidth requests}{IFIP WOCN | 2006}\par
+\endgroup
 \Section{Education}
 \ResumeEducation
 \end{document}

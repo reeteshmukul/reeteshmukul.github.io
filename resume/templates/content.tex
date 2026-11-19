@@ -4,23 +4,37 @@
 \newcommand{\ResumeName}{Reetesh Mukul}
 \newcommand{\ResumeTitle}{World Models | Large Multimodal Models}
 \newcommand{\ResumeContact}{Bengaluru, India \enspace | \enspace +91 89511 63698 \\ \faEnvelope\enspace\href{mailto:reetesh.mukul@gmail.com}{reetesh.mukul@gmail.com} \enspace | \enspace \faLinkedin\enspace\href{https://www.linkedin.com/in/reetesh-mukul-5392532}{linkedin.com/in/reetesh-mukul-5392532}}
-\newcommand{\ResumeSummary}{I lead the design, architecture, and evaluation of large multimodal models and world models for visual understanding and reasoning over time. My work spans recovering structure from complex page layouts, grounding language in objects and regions, and reasoning about motion and identity across video frames. Across these settings, I focus on what a model needs to represent, how to train it, and how to test whether its answers follow from what it has seen.}
-\newcommand{\ResumeSkills}{\textbf{Multimodal learning.} Object detection and segmentation, person tracking, visual grounding, and video reasoning.\par\smallskip\textbf{Document intelligence.} Multilingual OCR, reading order, table structure, and schema-guided extraction.\par\smallskip\textbf{Decision systems.} Policy verification for multi-step actions, Bayesian modeling, reinforcement learning, and adaptive scheduling.}
-
-\newcommand{\ResumeResearchHighlights}{
-  \ResearchHighlight{Sannivesh: Learning object structure}{Built on a pretrained DINOv3 encoder to preserve scene coordinates as it represents individual regions. Geometric, local consistency, and edge–face supervision support separate predictions of boxes, masks, and structure. On COCO, the model reached 52.54 box AP and 41.74 mask AP.}
-  \ResearchHighlight{AGIL-P: Tracking identity through action}{Combined appearance, pose, and motion across video frames to track people, retrieve identities, and estimate box trajectories conditioned on observed motion. On DanceTrack, the model scored 57.50 HOTA for tracking and 93.09\% mean average precision for within-video identity retrieval.}
-  \ResearchHighlight{Drishtikosh: Querying visual memory}{Designed a spatial memory that a language decoder can revisit as a query unfolds. Detection, segmentation, counting, and referring-expression localization draw on the same stored evidence.}
+\newcommand{\ResumeSummary}{I lead the design, architecture, and evaluation of large multimodal models and world models for visual reasoning in documents, images, and video. My work spans recovering structure from complex document layouts, grounding language in objects and image regions, and tracking motion and identity across frames. I design representations and training objectives for these tasks, then test whether specific visual evidence supports each model’s answers.}
+\providecommand{\ExpertiseRow}[2]{\textbf{#1.} #2\par\smallskip}
+\newcommand{\ResumeSkills}{%
+  \ExpertiseRow{Vision and language}{Vision–language adaptation, cross-modal alignment, and grounding referring expressions in image regions.}%
+  \ExpertiseRow{Object and person modeling}{Geometric and topological supervision for detection and segmentation, pose and motion cues for tracking and identity retrieval.}%
+  \ExpertiseRow{Document intelligence}{Multilingual OCR, reading order, table reconstruction, and schema-guided field extraction.}%
+  \ExpertiseRow{Policy verification}{Mapping queries to policy constraints and checking multi-step actions against those constraints.}%
+  \ExpertiseRow{Visual authenticity}{Biometric deepfake detection, face anti-spoofing, and frame-level video analysis.}%
+  \ExpertiseRow{Adaptive decision systems}{Bayesian models of image memorability, reinforcement learning and bandit policies for scheduling and resource allocation.}%
+  \ExpertiseRow{Programming languages}{C, C++, Haskell, and Python.}%
 }
 
+\providecommand{\TopicIcon}[1]{}
+\newcommand{\ResumeResearchHighlights}{%
+  \ResearchHighlight{\TopicIcon{cube}Object structure}{Preserve scene coordinates when encoding individual regions. Use geometry and connectivity to learn how parts fit together, then read out boxes, masks, and internal structure from the same representation.}
+  \ResearchHighlight{\TopicIcon{walking}Identity and change in video}{Combine appearance, pose, and motion across frames to track and retrieve the same person within a video. For authenticity checks, compare a video predictor’s expected representation with the observed one to detect signs of manipulation.}
+  \ResearchHighlight{\TopicIcon{eye}Visual memory and grounding}{Let a language decoder revisit stored regions to locate, count, or segment objects. Route box predictions through the selected visual evidence and test whether substituting mismatched regions changes the result.}
+  \ResearchHighlight{\TopicIcon{file-alt}Document extraction}{Link field-level errors to a schema’s descriptions and grouping. Test combinations of edits with the extractor fixed, preserving output keys and types so improvements can be traced to the schema.}
+  \ResearchHighlight{\TopicIcon{project-diagram}Policy reasoning}{Encode conditions, scope, and dependencies as a graph. Change individual constraints, check whether the decision changes as required, and trace where the verifier first loses the distinction.}
+}
+
+\providecommand{\RoleAssignment}[2]{#1 (#2)}
+\providecommand{\AssignmentBreak}{, }
+\providecommand{\JustifiedRoleBody}[1]{#1}
 \newcommand{\ResumeExperience}{
-  \Role{Dec 2023--Present}{Senior Principal Applied Scientist}{Oracle India | Bengaluru}{Lead model design, evaluation, and deployment for multimodal AI. Developed schema-guided extraction for invoices and tables, and policy verification for multi-step model actions. Other work spans biometric deepfake detection and frame-level video analysis.}
-  \Role{Dec 2022--Nov 2023}{Principal Machine Learning Engineer}{Huawei Singapore Research Center | Singapore}{Prototyped diffusion-based inpainting and outpainting for advertising creatives. Modeled how visual attention, saliency, and memorability relate to ad effectiveness.}
-  \Role{May 2021--Nov 2022}{Principal Machine Learning Engineer}{Huawei India Research Center | India}{Trained dense vision transformers to predict image memorability. Used Bayesian models to study how visual cues relate to click-through rates.}
-  \Role{Sep 2016--Apr 2021}{Senior Computer Scientist}{Adobe | India}{Developed reinforcement-learning and bandit methods for scheduling, resource allocation, and job execution in creative applications. Co-invented techniques for responsive input and application performance.}
-  \Role{2015--2016}{Senior Software Developer / ML Engineer}{Flipkart | India}{Developed ad click-prediction models for CTR, CVR, ranking, and sampling, and contributed to the Android native-ad SDK.}
-  \Role{2008--2015}{Software Developer to Senior Software Developer}{Qualcomm | India}{Built OCR for Indic Devanagari characters, scene-detection capabilities for camera workflows, voice state-machine components, and embedded drivers.}
-  \Role{2006--2008}{Software Developer}{Texas Instruments | India}{Developed software for GPS components in embedded environments.}
+  \Role{Dec 2023--Present}{Senior Principal Applied Scientist}{Oracle India | Bengaluru}{\JustifiedRoleBody{Developed methods to recognize the same person across tracks and videos using visual action and semantic cues. Linked language queries to image regions and modeled the geometry and connectivity of object parts to predict bounding boxes, masks, and internal structure. Evaluated facial images and video for spoofing and deepfake manipulation and designed facial recognition systems for public safety. Represented policy conditions and dependencies as graphs to verify sequences of actions. Developed and evaluated schema-guided models to extract fields and tables from multilingual documents, including invoices.}}
+  \Role{\RoleAssignment{Dec 2022--Nov 2023}{Singapore Research Center}\AssignmentBreak\RoleAssignment{May 2021--Nov 2022}{India Research Center}}{Huawei}{Principal Machine Learning Engineer}{\JustifiedRoleBody{Developed diffusion models to edit and recompose ad images through inpainting and outpainting. Helped build a system to evaluate ad effectiveness by studying what draws viewers’ attention and which images they remember. Trained vision transformers to predict image memorability, modeled visual saliency, and used sequential models to assess the contribution of ad copy to creative ranking. Used Bayesian models to study how visual cues and measures of viewer response correlated with click-through rate (CTR).}}
+  \Role{Sep 2016--Apr 2021}{Senior Computer Scientist}{Adobe | India}{\JustifiedRoleBody{Developed reinforcement-learning and bandit methods for scheduling and resource allocation in creative applications. Improved Lightroom Classic import and library workflows through batch allocation and low-latency queries. Built visual-similarity models and panoptic-segmentation components for Adobe Sensei and designed metrics to evaluate them. Co-invented techniques for responsive input and application performance.}}
+  \Role{2015--2016}{Senior Software Developer / ML Engineer}{Flipkart | India}{Modeled click-through and conversion rates for ad ranking, with work on sampling methods including Thompson sampling. Contributed to the mobile SDK for native advertising on Android.}
+  \Role{2008--2015}{Software Developer to Senior Software Developer}{Qualcomm | India}{Built character and word decoders for Devanagari OCR and optimized vector routines for mobile devices. Developed scene detection for camera workflows, voice state-machine components, and embedded drivers.}
+  \Role{2006--2008}{Software Developer}{Texas Instruments | India}{Developed software for embedded GPS components using C++ and assembly.}
 }
 
 \newcommand{\ResumeSelectedWorks}{

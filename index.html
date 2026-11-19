@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Reetesh Mukul - Senior Principal Applied Scientist specializing in multimodal learning, document AI, visual intelligence, and AI guardrails.">
+  <meta name="description" content="Reetesh Mukul - Senior Principal Applied Scientist working on world models and large multimodal models for visual reasoning in documents, images, and video.">
   <title>Reetesh Mukul | Senior Principal Applied Scientist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,22 +48,24 @@
     h2 { margin: 0; font-family: "IBM Plex Sans", Arial, sans-serif; font-size: 2.15rem; font-weight: 600; letter-spacing: 0; line-height: 1.08; }
     .section-intro { max-width: 690px; color: var(--muted); }
     .focus-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-    .focus { min-height: 178px; padding: 22px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .focus .number { color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; }
+    .focus { padding: 18px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .focus h3 { margin: 0 0 7px; }
     h3 { margin: 12px 0 7px; font-family: "IBM Plex Sans", Arial, sans-serif; font-size: 1.01rem; font-weight: 600; line-height: 1.32; }
     .focus p { margin: 0; color: var(--muted); font-size: 0.91rem; }
     .highlight { display: grid; grid-template-columns: 175px minmax(0, 1fr); gap: 30px; padding: 24px 0; border-top: 1px solid var(--line); }
-    .highlight-title { font-family: "IBM Plex Sans", Arial, sans-serif; font-weight: 600; font-size: 1rem; line-height: 1.35; }
+    .highlight-title { margin: 0; font-family: "IBM Plex Sans", Arial, sans-serif; font-weight: 600; font-size: 1rem; line-height: 1.35; }
     .highlight p { max-width: 730px; margin: 0; color: #374352; }
     .experience { border-top: 1px solid var(--line); }
     .role { display: grid; grid-template-columns: 175px minmax(0, 1fr); gap: 30px; padding: 25px 0; border-bottom: 1px solid var(--line); }
     .dates { color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; font-weight: 500; }
+    .dates div + div { margin-top: 0.85em; }
     .role h3 { margin: 0 0 3px; font-family: "IBM Plex Sans", Arial, sans-serif; font-size: 1.03rem; font-weight: 600; }
     .company { color: var(--muted); font-size: 0.88rem; }
     .role p { margin: 12px 0 0; max-width: 790px; color: #374352; font-size: 0.94rem; }
     .record { margin: 0; max-width: 880px; color: #374352; font-size: 0.95rem; }
-    .record-item { display: inline; }
-    .record-item:not(:last-child)::after { content: " / "; color: var(--accent); padding: 0 6px; }
+    .record { list-style: none; padding: 0; }
+    .record li + li { margin-top: 0.65em; }
+    .record a { color: var(--accent); text-decoration: underline; text-underline-offset: 0.15em; }
     .record strong { font-family: "IBM Plex Sans", Arial, sans-serif; font-weight: 600; }
     .foot { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 28px; padding-bottom: 34px; color: var(--muted); font-size: 0.78rem; }
     .foot a { color: var(--accent); font-weight: 700; }
@@ -127,14 +129,17 @@
           <div class="label">Profile</div>
           <div>
             <h2>Research Focus</h2>
-            <p class="section-intro">I lead the design, architecture, and evaluation of large multimodal models and world models for visual understanding and reasoning over time. My work spans recovering structure from complex page layouts, grounding language in objects and regions, and reasoning about motion and identity across video frames. Across these settings, I focus on what a model needs to represent, how to train it, and how to test whether its answers follow from what it has seen.</p>
+            <p class="section-intro">I lead the design, architecture, and evaluation of large multimodal models and world models for visual reasoning in documents, images, and video. My work spans recovering structure from complex document layouts, grounding language in objects and image regions, and tracking motion and identity across frames. I design representations and training objectives for these tasks, then test whether specific visual evidence supports each model’s answers.</p>
           </div>
         </div>
         <div class="focus-grid">
-          <article class="focus"><div class="number">01</div><h3>Large Multimodal Models</h3><p>Vision-language adaptation, visual grounding, cross-modal alignment, temporal reasoning, and evaluation design for real-world systems.</p></article>
-          <article class="focus"><div class="number">02</div><h3>AI Policy Verification</h3><p>LLM-powered policy verification with policy and query intermediate representations, query-to-policy mapping, constraint-aware reasoning, and multi-step action evaluation.</p></article>
-          <article class="focus"><div class="number">03</div><h3>Document Intelligence</h3><p>Schema-guided extraction for multilingual OCR, complex layouts, reading order, tables, invoices, and constrained key-value extraction.</p></article>
-          <article class="focus"><div class="number">04</div><h3>Robust Visual Systems</h3><p>Visual guard models, synthetic-media detection, face anti-spoofing, memorability modeling, and efficient adaptive routing.</p></article>
+          <article class="focus"><h3>Vision and language</h3><p>Vision–language adaptation, cross-modal alignment, and grounding referring expressions in image regions.</p></article>
+          <article class="focus"><h3>Object and person modeling</h3><p>Geometric and topological supervision for detection and segmentation, pose and motion cues for tracking and identity retrieval.</p></article>
+          <article class="focus"><h3>Document intelligence</h3><p>Multilingual OCR, reading order, table reconstruction, and schema-guided field extraction.</p></article>
+          <article class="focus"><h3>Policy verification</h3><p>Mapping queries to policy constraints and checking multi-step actions against those constraints.</p></article>
+          <article class="focus"><h3>Visual authenticity</h3><p>Biometric deepfake detection, face anti-spoofing, and frame-level video analysis.</p></article>
+          <article class="focus"><h3>Adaptive decision systems</h3><p>Bayesian models of image memorability, reinforcement learning and bandit policies for scheduling and resource allocation.</p></article>
+          <article class="focus"><h3>Programming languages</h3><p>C, C++, Haskell, and Python.</p></article>
         </div>
       </div>
     </section>
@@ -145,9 +150,11 @@
           <div class="label">Selected work</div>
           <h2 id="highlights-heading">Research Highlights</h2>
         </div>
-        <div class="highlight"><div class="highlight-title">Sannivesh · Learning object structure</div><p>Built on a pretrained DINOv3 encoder to preserve scene coordinates as it represents individual regions. Geometric, local consistency, and edge–face supervision support separate predictions of boxes, masks, and structure. On COCO, the model reached 52.54 box AP and 41.74 mask AP.</p></div>
-        <div class="highlight"><div class="highlight-title">AGIL-P · Tracking identity through action</div><p>Combined appearance, pose, and motion across video frames to track people, retrieve identities, and estimate box trajectories conditioned on observed motion. On DanceTrack, the model scored 57.50 HOTA for tracking and 93.09% mean average precision for within-video identity retrieval.</p></div>
-        <div class="highlight"><div class="highlight-title">Drishtikosh · Querying visual memory</div><p>Designed a spatial memory that a language decoder can revisit as a query unfolds. Detection, segmentation, counting, and referring-expression localization draw on the same stored evidence.</p></div>
+        <article class="highlight"><h3 class="highlight-title">Object structure</h3><p>Preserve scene coordinates when encoding individual regions. Use geometry and connectivity to learn how parts fit together, then read out boxes, masks, and internal structure from the same representation.</p></article>
+        <article class="highlight"><h3 class="highlight-title">Identity and change in video</h3><p>Combine appearance, pose, and motion across frames to track and retrieve the same person within a video. For authenticity checks, compare a video predictor’s expected representation with the observed one to detect signs of manipulation.</p></article>
+        <article class="highlight"><h3 class="highlight-title">Visual memory and grounding</h3><p>Let a language decoder revisit stored regions to locate, count, or segment objects. Route box predictions through the selected visual evidence and test whether substituting mismatched regions changes the result.</p></article>
+        <article class="highlight"><h3 class="highlight-title">Document extraction</h3><p>Link field-level errors to a schema’s descriptions and grouping. Test combinations of edits with the extractor fixed, preserving output keys and types so improvements can be traced to the schema.</p></article>
+        <article class="highlight"><h3 class="highlight-title">Policy reasoning</h3><p>Encode conditions, scope, and dependencies as a graph. Change individual constraints, check whether the decision changes as required, and trace where the verifier first loses the distinction.</p></article>
       </div>
     </section>
 
@@ -158,11 +165,12 @@
           <div><h2>Professional Experience</h2><p class="section-intro">Research and engineering roles across applied AI, visual computing, and high-performance software systems.</p></div>
         </div>
         <div class="experience">
-          <article class="role"><div class="dates">Dec 2023 - Present</div><div><h3>Senior Principal Applied Scientist</h3><div class="company">Oracle India · Bengaluru</div><p>Own applied research for large multimodal models, from problem formulation through model design, evaluation, and productization. Recent work includes policy verification, document intelligence, deepfake detection, and video reasoning.</p></div></article>
-          <article class="role"><div class="dates">Dec 2022 - Nov 2023</div><div><h3>Principal Machine Learning Engineer</h3><div class="company">Huawei Singapore Research Center · Singapore</div><p>Led research-to-prototype work on advertising creative improvement using diffusion-based inpainting and outpainting, visual-content understanding, and ad-effectiveness modeling.</p></div></article>
-          <article class="role"><div class="dates">May 2021 - Nov 2022</div><div><h3>Principal Machine Learning Engineer</h3><div class="company">Huawei India Research Center · India</div><p>Led research on image memorability and cognitive aspects of visual content, applying Bayesian probabilistic programming and dense vision-transformer models.</p></div></article>
-          <article class="role"><div class="dates">Sep 2016 - Apr 2021</div><div><h3>Senior Computer Scientist</h3><div class="company">Adobe · India</div><p>Led applied ML and performance research for creative applications, including visual similarity, panoptic segmentation, interactive systems, reinforcement learning, and multi-armed-bandit scheduling.</p></div></article>
-          <article class="role"><div class="dates">2006 - 2016</div><div><h3>Earlier Engineering and ML Roles</h3><div class="company">Flipkart · Qualcomm · Texas Instruments</div><p>Built ad click-prediction systems, Indic OCR, camera scene detection, embedded software, and GPS components.</p></div></article>
+          <article class="role"><div class="dates">Dec 2023–Present</div><div><h3>Senior Principal Applied Scientist</h3><div class="company">Oracle India · Bengaluru</div><p>Developed methods to recognize the same person across tracks and videos using visual action and semantic cues. Linked language queries to image regions and modeled the geometry and connectivity of object parts to predict bounding boxes, masks, and internal structure. Evaluated facial images and video for spoofing and deepfake manipulation and designed facial recognition systems for public safety. Represented policy conditions and dependencies as graphs to verify sequences of actions. Developed and evaluated schema-guided models to extract fields and tables from multilingual documents, including invoices.</p></div></article>
+          <article class="role"><div class="dates"><div>Dec 2022–Nov 2023<br>Singapore Research Center</div><div>May 2021–Nov 2022<br>India Research Center</div></div><div><h3>Huawei</h3><div class="company">Principal Machine Learning Engineer</div><p>Developed diffusion models to edit and recompose ad images through inpainting and outpainting. Helped build a system to evaluate ad effectiveness by studying what draws viewers’ attention and which images they remember. Trained vision transformers to predict image memorability, modeled visual saliency, and used sequential models to assess the contribution of ad copy to creative ranking. Used Bayesian models to study how visual cues and measures of viewer response correlated with click-through rate (CTR).</p></div></article>
+          <article class="role"><div class="dates">Sep 2016–Apr 2021</div><div><h3>Senior Computer Scientist</h3><div class="company">Adobe · India</div><p>Developed reinforcement-learning and bandit methods for scheduling and resource allocation in creative applications. Improved Lightroom Classic import and library workflows through batch allocation and low-latency queries. Built visual-similarity models and panoptic-segmentation components for Adobe Sensei and designed metrics to evaluate them. Co-invented techniques for responsive input and application performance.</p></div></article>
+          <article class="role"><div class="dates">2015–2016</div><div><h3>Senior Software Developer / ML Engineer</h3><div class="company">Flipkart · India</div><p>Modeled click-through and conversion rates for ad ranking, with work on sampling methods including Thompson sampling. Contributed to the mobile SDK for native advertising on Android.</p></div></article>
+          <article class="role"><div class="dates">2008–2015</div><div><h3>Software Developer to Senior Software Developer</h3><div class="company">Qualcomm · India</div><p>Built character and word decoders for Devanagari OCR and optimized vector routines for mobile devices. Developed scene detection for camera workflows, voice state-machine components, and embedded drivers.</p></div></article>
+          <article class="role"><div class="dates">2006–2008</div><div><h3>Software Developer</h3><div class="company">Texas Instruments · India</div><p>Developed software for embedded GPS components using C++ and assembly.</p></div></article>
         </div>
       </div>
     </section>
@@ -173,14 +181,24 @@
           <div class="label">Research record</div>
           <div><h2>Selected Patents and Publications</h2><p class="section-intro">Selected public work across multimodal document extraction, image memorability, video reasoning, adaptive systems, and communications.</p></div>
         </div>
-        <p class="record">
-          <span class="record-item"><strong>Schema-guided LMM key-value extraction</strong> · Oracle · US 2026/0127165 A1</span>
-          <span class="record-item"><strong>Vision-transformer image memorability</strong> · Oracle · US 2026/0105736 A1</span>
-          <span class="record-item"><strong>Multimodal video highlight reasoning</strong> · Oracle · US 2026/0187146 A1</span>
-          <span class="record-item"><strong>RL-based resource management</strong> · Adobe · US 11,556,393 B2</span>
-          <span class="record-item"><strong>Bandit-controlled job-executor policies</strong> · Adobe · US 12,547,446 B2</span>
-          <span class="record-item"><strong>WiMAX QoS bandwidth requests</strong> · IFIP WOCN · 2006</span>
-        </p>
+        <ul class="record">
+          <li><strong>Oracle grant</strong> · <a href="https://patents.google.com/patent/US12670212B1/en">US12670212B1</a> · Match video highlights to a query using visual, audio, and text cues.</li>
+          <li><strong>Adobe grant</strong> · <a href="https://patents.google.com/patent/US12547446B2/en">US12547446B2</a> · Switch thread-pool policies at runtime using bandit feedback.</li>
+          <li><strong>Adobe grant</strong> · <a href="https://patents.google.com/patent/US12135741B2/en">US12135741B2</a> · Tune batch sizes and parallel file transfers with a Markov decision process.</li>
+          <li><strong>Adobe grant</strong> · <a href="https://patents.google.com/patent/US11556393B2/en">US11556393B2</a> · Learn which resource adjustments keep an application responsive.</li>
+          <li><strong>Adobe grant</strong> · <a href="https://patents.google.com/patent/US10884769B2/en">US10884769B2</a> · Recommend editing tools from a sequence of photo-editing actions.</li>
+          <li><strong>Oracle application</strong> · <a href="https://patents.google.com/patent/US20260127165A1/en">US20260127165A1</a> · Use a document schema to guide multimodal key-value extraction.</li>
+          <li><strong>Oracle application</strong> · <a href="https://patents.google.com/patent/US20260105736A1/en">US20260105736A1</a> · Predict image memorability from whole-image, region, and pixel features.</li>
+          <li><strong>WiMAX QoS bandwidth requests</strong> · IFIP WOCN · 2006</li>
+        </ul>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="education-heading">
+      <div class="shell">
+        <div class="highlight">
+          <h2 id="education-heading">Education</h2>
+          <p>M.Tech, IIIT Bangalore · B.Tech, BIT Sindri</p>
+        </div>
       </div>
     </section>
   </main>
